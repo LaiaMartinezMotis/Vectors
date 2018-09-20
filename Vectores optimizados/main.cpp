@@ -40,33 +40,39 @@ int main() {
 
 	cout << "Operators: " << endl;
 	cout << endl;
+
 	cout << "+:  V1 + V2 =" << endl;
 	V6 = V1 + V2;
 	V6.Print();
 	cout << endl;
+
 	cout << "-:  V3 - V4" << endl;
 	V6 = V3 - V4;
 	V6.Print();
 	cout << endl;
+
 	cout << "+=:  V5 += V1" << endl;
 	V5 += V1;
 	V5.Print();
 	cout << endl;
+
 	cout << "-=:  V5 -= V1" << endl;
 	V5 -= V1;
 	V5.Print();
 	cout << endl;
+
 	cout << "=:  V3 = V1" << endl;
 	V3 = V1;
 	V3.Print();
 	cout << endl;
-	
-	
+
+
 	cout << "Functions: " << endl;
 
-	//V7.normalize(); //Out of order
+	V7.normalize(); //Out of order
 	cout << "Normalizing the vector V7: " << endl;
-	//cout << V7.Print() << endl;
+	V7.Print();
+	cout << endl;
 
 	V2.zero();
 	cout << "2.Zero" << endl;
@@ -90,5 +96,5 @@ int main() {
 
 	system("pause");
 	return 0;
-	
+
 }
