@@ -1,17 +1,17 @@
-#ifndef HEADER_H
-#define HEADER_H
+#ifndef VECTOR3_H
+#define VECTOR3_H
 
-template<typename type>
+template<typename TYPE>
 
 class vec3 {
-
-	type x, y, z;
+public:
+	TYPE x, y, z;
 
 public:
 	vec3() {};
-	vec3(const type& x, const type&  y, const type&  z) : x(x), y(y), z(z) {
-
-	};
+	vec3(const TYPE& x, const TYPE&  y, const TYPE&  z) : x(x), y(y), z(z) {};
+	//
+	//vec3(const vec&vec) :x(vec.x), y(vec.y), z(vec.z) {};
 	
 	vec3 operator + (const vec3& vec) const {
 
@@ -53,12 +53,12 @@ public:
 
 	bool operator == (const vec3& vec)  const {
 
-		return  (this->x == vec.x && this->y == vec.y && this->z == vec.z);
+		return  (x == vec.x && y == vec.y && z == vec.z);
 	}
 
 	//Normalize funcion
 	vec3 normalize() {
-		type len = sqrt((x*x) + (y*y) + (z*z));//auxiliar=raiz cuadradada de X,Y,Z elevados al quadrado(modulo) 
+		TYPE len = sqrt((x*x) + (y*y) + (z*z));//auxiliar=raiz cuadradada de X,Y,Z elevados al quadrado(modulo) 
 		this->x = this->x / len; // Valor x entre modulo
 		this->y = this->y / len; // Valor y entre modulo
 		this->z = this->z / len; // Valor x entre modulo
@@ -69,22 +69,20 @@ public:
 
 	//Zero funcion
 	void zero() {
-		x = 0;
-		y = 0;
-		z = 0;
+		x = y = z = 0.0f;
 	}
 
 	//Is Zero funcion
 	bool iszero() const {
-		return (this->x == 0 && this->y == 0 && this->z == 0);
+		return (x == 0.0f && y == 0.0f && z == 0.0f);
 	}
 
 	//Distance to funcion
 	float distanceto(const vec3& vec) const {
 		vec3 v1;
-		v1.x = -this->x + vec.x;
-		v1.y = -this->y + vec.y;
-		v1.z = -this->z + vec.z;
+		v1.x = this->x + vec.x;
+		v1.y = this->y + vec.y;
+		v1.z = this->z + vec.z;
 		return (sqrt(pow(v1.x, 2) + pow(v1.y, 2) + pow(v1.z, 2)));
 	}
 
