@@ -10,8 +10,7 @@ public:
 public:
 	vec3() {};
 	vec3(const TYPE& x, const TYPE&  y, const TYPE&  z) : x(x), y(y), z(z) {};
-	//
-	//vec3(const vec&vec) :x(vec.x), y(vec.y), z(vec.z) {};
+	vec3(const vec3&vec) :x(vec.x), y(vec.y), z(vec.z) {};
 	
 	vec3 operator + (const vec3& vec) const {
 
@@ -83,9 +82,14 @@ public:
 		v1.x = this->x + vec.x;
 		v1.y = this->y + vec.y;
 		v1.z = this->z + vec.z;
-		return (sqrt(pow(v1.x, 2) + pow(v1.y, 2) + pow(v1.z, 2)));
+		return (sqrt(x - vec.x)*(x - vec.x) + (y - vec.y)*(y - vec.y) + (z - vec.z)*(z - vec.z));
 	}
+	//Distance Squared function
+	float distancesquared(const vec3& vec) const{
 
+		return ((x - vec.x)*(x - vec.x) + (y - vec.y)*(y - vec.y) + (z - vec.z)*(z - vec.z));
+
+	}
 
 	//Print the vectors
 	void Print() const {

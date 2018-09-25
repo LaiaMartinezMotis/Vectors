@@ -93,6 +93,9 @@ int main() {
 	cout << V4.distanceto(V8) << endl;
 
 
+	cout << "5. Distance Squared" << endl;
+	cout<<
+
 
 	system("pause");
 	return 0;
