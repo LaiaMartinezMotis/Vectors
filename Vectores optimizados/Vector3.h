@@ -57,10 +57,12 @@ public:
 
 	//Normalize funcion
 	vec3 normalize() {
-		TYPE len = sqrt((x*x) + (y*y) + (z*z));//auxiliar=raiz cuadradada de X,Y,Z elevados al quadrado(modulo) 
-		this->x = this->x / len; // Valor x entre modulo
-		this->y = this->y / len; // Valor y entre modulo
-		this->z = this->z / len; // Valor x entre modulo
+		TYPE len = sqrt((x*x) + (y*y) + (z*z));
+		if (len != 0) {//auxiliar=raiz cuadradada de X,Y,Z elevados al quadrado(modulo) 
+			this->x = this->x / len; // Valor x entre modulo
+			this->y = this->y / len; // Valor y entre modulo
+			this->z = this->z / len; // Valor x entre modulo
+		}
 		return *this;
 	}
 
